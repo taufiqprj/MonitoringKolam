@@ -26,17 +26,18 @@ void loop()
 		timepoint = millis();
 		//voltage = rawPinValue / esp32ADC * esp32Vin
 		voltage = analogRead(PH_PIN) / ESPADC * ESPVOLTAGE; // read the voltage
-		Serial.print("voltage:");
-		Serial.println(voltage, 4);
+		// Serial.print(" || voltage: ");
+		// Serial.print(voltage, 4);
 		
 		//temperature = readTemperature();  // read your temperature sensor to execute temperature compensation
-		Serial.print("temperature:");
-		Serial.print(temperature, 1);
-		Serial.println("^C");
+
+		// Serial.print("  || temperature: ");
+		// Serial.print(temperature, 1);
+		// Serial.print(" ^C  ");
 
 		phValue = ph.readPH(voltage, temperature); // convert voltage to pH with temperature compensation
-		Serial.print("pH:");
-		Serial.println(phValue, 4);
+		Serial.print("  || pH: ");
+		Serial.println( phValue, 4);
 	}
 	ph.calibration(voltage, temperature); // calibration process by Serail CMD
 }
