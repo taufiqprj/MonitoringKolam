@@ -14,7 +14,7 @@ float voltage, phValue, temperature = 25;
 void setup()
 {
 	Serial.begin(115200);
-	EEPROM.begin(32);//needed to permit storage of calibration value in eeprom
+	// EEPROM.begin(32);//needed to permit storage of calibration value in eeprom
 	ph.begin();
 }
 
@@ -24,12 +24,12 @@ void loop()
 	if (millis() - timepoint > 1000U) //time interval: 1s
 	{
 		timepoint = millis();
-		//voltage = rawPinValue / esp32ADC * esp32Vin
+		// voltage = rawPinValue / esp32ADC * esp32Vin
 		voltage = analogRead(PH_PIN) / ESPADC * ESPVOLTAGE; // read the voltage
 		// Serial.print(" || voltage: ");
 		// Serial.print(voltage, 4);
 		
-		//temperature = readTemperature();  // read your temperature sensor to execute temperature compensation
+		// temperature = readTemperature();  // read your temperature sensor to execute temperature compensation
 
 		// Serial.print("  || temperature: ");
 		// Serial.print(temperature, 1);
