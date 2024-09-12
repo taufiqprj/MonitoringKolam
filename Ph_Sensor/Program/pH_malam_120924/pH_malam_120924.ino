@@ -1,9 +1,17 @@
+/*
+pH Sensor Program
+Author  : Wildan Taufiq (NGK Task Service)
+Version : 2.0
+Date    : 12 Sept 2024
+*/
+
 #include <Arduino.h>
 
 const int pH_Pin = 34;  // Pin analog untuk sensor pH
 
 float pH_Value;
 float Voltage;
+float Offset = 0.00;
 
 void setup() {
   Serial.begin(115200);
@@ -23,7 +31,6 @@ void loop() {
 }
 
 // Fungsi untuk mengkalibrasi sensor
-float Offset = 0.00;
 #define ArrayLenth 40
 int pHArray[ArrayLenth];
 int pHArrayIndex = 0;
