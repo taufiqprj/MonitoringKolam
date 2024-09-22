@@ -1,7 +1,7 @@
 #include <EEPROM.h>
 #include "GravityTDS.h"
 
-#define TdsSensorPin 4
+#define TdsSensorPin 34
 
 GravityTDS gravityTds;
 
